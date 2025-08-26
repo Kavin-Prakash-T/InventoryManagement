@@ -1,0 +1,95 @@
+1. Project Title & Description
+
+     Title: Retail Inventory Management System
+     Description:
+     A console-based Java application for managing retail shop inventory. The system allows an Admin to perform full CRUD (Add, Update, Delete, View) operations on products and generate stock/sales reports. A Staff user can log in to view stock levels and reports only. The system uses MySQL with JDBC for persistent storage.
+
+2. Problem Statement & Target Users
+
+     Problem Statement:
+     Retail shops often face difficulties in managing stock, updating quantities, and preventing over/under-stocking. Manual tracking is error-prone and time-consuming.
+     
+     Target Users:
+     
+     Admin (Shop Manager) → manage inventory (add, delete, update, view products).
+     
+     Staff (Employees) → only view stock levels and reports to assist customers.
+     
+     3. UML Class Diagram
+     
+     (You already have this, refined for Review 1)
+     
++------------------+
+|   Product        |
++------------------+
+| - productId:int  |
+| - name:String    |
+| - category:String|
+| - quantity:int   |
+| - price:double   |
+| - supplier:String|
++------------------+
+
++------------------+
+|   ProductDAO     |
++------------------+
+| +addProduct()    |
+| +updateProduct() |
+| +deleteProduct() |
+| +viewProducts()  |
+| +searchProduct() |
++------------------+
+
++------------------+
+| User (abstract)  |
++------------------+
+| - username:String|
+| - password:String|
+| +login()         |
+| +showMenu()      |
++------------------+
+           ^
+           |
+   -------------------
+   |                 |
++--------+     +-----------+
+| Admin  |     |  Staff    |
++--------+     +-----------+
+| +showMenu()  | +showMenu()|
+| full access  | view only |
++--------------+-----------+
+
++------------------+
+| Report (abstract)|
++------------------+
+| +generate()      |
++------------------+
+        ^
+        |
+ -------------------------
+ |                       |
++-------------+  +-----------------+
+| StockReport |  | SalesReport     |
++-------------+  +-----------------+
+| +generate() |  | +generate()     |
++-------------+  +-----------------+
+
+4. OOP Concepts Used
+
+     Encapsulation: Product attributes (id, name, qty, etc.) with getters/setters.
+     
+     Inheritance:
+     
+     Admin and Staff inherit from User.
+     
+     StockReport and SalesReport inherit from Report.
+     
+     Polymorphism (Runtime):
+     
+     user.showMenu() → dynamically calls Admin or Staff menu.
+     
+     report.generate() → calls Stock or Sales report.
+     
+     Abstraction: User and Report are abstract classes.
+     
+     Modularity: DAO handles database logic separately from business logic.

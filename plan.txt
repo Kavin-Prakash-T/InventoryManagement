@@ -1,0 +1,91 @@
+Inventory Management System for Retail Products
+
+1.Role-based Dashboard
+
+   ->After login, show a dashboard summary:
+   ->Total number of products
+   ->Total stock value (sum of quantity × price)
+   ->Number of low-stock items
+
+2.Category-Wise Report
+
+   ->Example: Electronics → 120 items, Grocery → 450 items.
+   ->Use GROUP BY category in SQL.
+   ->Useful for retail managers to quickly see which category dominates.
+
+3.Low Stock Alerts with Auto-Reorder Suggestion
+
+   ->If quantity < 5, system suggests:
+   ->"Order 20 more units from supplier XYZ".
+   ->You can hardcode or fetch supplier from DB.
+
+4.Search with Filters
+
+    ->Search by:
+        Product ID - Binary Search For Effiency
+        Product Name
+        Category
+
+5.Export Reports to Text/CSV(If I able to do)
+
+    ->Allow user to export inventory report into a .txt 
+    ->Super impressive even in a console app.
+
+6.User Activity Log
+
+     ->Track what each user did:
+     ->Admin added product
+     ->User viewed stock
+     ->Store logs in a logs table with timestamp.
+
+
+UML Diagram:
+
+
+                   ┌───────────────────────┐
+                │        User            │
+                │----------------------- │
+                │ - username : String    │
+                │ - role : String        │
+                │----------------------- │
+                │ + showMenu() : void    │
+                └───────────▲───────────┘
+                            │
+      ┌─────────────────────┼─────────────────────┐
+      │                                           │
+┌───────────────┐                         ┌───────────────┐
+│    Admin       │                         │    Staff      │
+│----------------│                         │---------------│
+│ + Admin(u)     │                         │ + Staff(u)    │
+│----------------│                         │---------------│
+│ + showMenu()   │                         │ + showMenu()  │
+└───────────────┘                         └───────────────┘
+
+
+                    ┌───────────────────────┐
+                    │       Product         │
+                    │-----------------------│
+                    │ - productId : int     │
+                    │ - name : String       │
+                    │ - category : String   │
+                    │ - quantity : int      │
+                    │ - price : double      │
+                    │ - supplier : String   │
+                    │-----------------------│
+                    │ + getters/setters     │
+                    └───────────────────────┘
+
+
+                    ┌───────────────────────┐
+                    │       Report          │
+                    │-----------------------│
+                    │ + generate() : void   │  <<abstract>>
+                    └───────────▲──────────┘
+                                │
+         ┌──────────────────────┼──────────────────────┐
+         │                                             │
+┌──────────────────┐                        ┌──────────────────┐
+│   StockReport     │                        │   SalesReport    │
+│------------------ │                        │----------------- │
+│ + generate()      │                        │ + generate()     │
+└──────────────────┘                        └──────────────────┘
