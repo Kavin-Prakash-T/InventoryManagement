@@ -38,7 +38,7 @@ The system ensures **data consistency** using a **MySQL database** and demonstra
 - **Programming Language:** Java  
 - **Database:** MySQL  
 - **Connectivity:** JDBC (Java Database Connectivity)  
-- **IDE (Optional):** IntelliJ IDEA / Eclipse / NetBeans  
+- **IDE (Optional):** Visual Studio Code
 - **Version Control:** Git & GitHub  
 - **Reports:** Exported as `.txt` files  
 
