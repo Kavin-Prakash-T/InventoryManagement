@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int choice;
-        do {
+        do {                                                                 //Menu Bar for user interaction
             System.out.println("Retail Inventory Management System");
             System.out.println("1. Add Product");
             System.out.println("2. Update Product");
