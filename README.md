@@ -41,7 +41,5 @@ The system ensures **data consistency** using a **MySQL database** and demonstra
 - **IDE (Optional):** Visual Studio Code
 - **Version Control:** Git & GitHub  
 - **Reports:** Exported as `.txt` files  
-- **Compilation Command:** javac -d out src/Main.java 
-- **Run Command:** java -cp out Main
-
+- **Compilation and Run Command:** Execute run.bat in Command Prompt
 ---
