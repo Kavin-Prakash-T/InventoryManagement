@@ -1,6 +1,6 @@
 package model;
 
-// Derived class from the base class User
+// Derived class from the base class User - Inheritance
 
 public class Admin extends User { 
 
@@ -10,28 +10,34 @@ public class Admin extends User {
     }
 
     //Implementation of the abstract methods
+    //Method to get the details of the product to be added
     public void addProduct() {
         System.out.println("Adding product...");
     }
 
+    //Method to get the details of the product to be updated
     public void updateProduct() {
         System.out.println("Updating product...");
     }
 
+    //Method to get the details of the product to be removed from the inventory
     public void deleteProduct() {
         System.out.println("Deleting product...");
     }
 
+    //Method to view the products in the inventory - Polymorphism
     @Override
     public void viewProducts() {
         System.out.println("Viewing all products...");
     }
 
+    //Method to generate a report based on the given information and category - Polymorphism
     @Override
     public void generateReport() {
         System.out.println("Generating full report...");
     }
 
+    //Method to view the past CRUD operations performed by the users - Polymorphism
     @Override
     public void viewLogs() {
         System.out.println("View Past CRUD History...");

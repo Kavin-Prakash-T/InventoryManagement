@@ -1,10 +1,11 @@
 package model;
 
-//Abstract base class for different type of users
+//Abstract base class for different type of users - Inheritance
 
 public abstract class User {
 
     //basic attributes for user
+    //Encapsulation
     protected String username;
     protected String password;
 
@@ -15,6 +16,8 @@ public abstract class User {
     }
 
     //Abstract methods to be implemented by derived classes
+    //These are the common features for all type of users
+    //Abstraction
     public abstract void viewProducts();
     public abstract void generateReport();
     public abstract void viewLogs();

@@ -3,10 +3,15 @@ import model.Admin;
 import model.Staff;
 import model.User;
 
+//Main class to run the application using Menu driven approach 
+
 public class Main {
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in); // Scanner class to get user input 
 
+        // Scanner class to get user input 
+        Scanner sc=new Scanner(System.in); 
+
+        // Welcome message and login prompt
         System.out.println("Retail Inventory Management System");
         System.out.print("Enter your position(Admin/Staff):");
         String position=sc.nextLine();
@@ -18,21 +23,28 @@ public class Main {
         System.out.print("Enter your password:");
         String password=sc.nextLine();
 
+        // Simple authentication - Role based Authentication
         User user;
         if (username.equals("admin") && password.equals("admin123")) {
+            
+            //Runtime implementation based on user role
             user = new Admin(username, password);
             showAdminMenu((Admin) user, sc);
-        } else if (username.equals("staff") && password.equals("staff123")) {
+        } 
+        else if (username.equals("staff") && password.equals("staff123")) {
+            
+            //Runtime implementation based on user role
             user = new Staff(username, password);
             showStaffMenu((Staff) user, sc);
-        } else {
+        } 
+        else {
             System.out.println("Invalid credentials!");
             return;
+        }
+        sc.close();
     }
 
-    sc.close();
-}
-
+    //Menu for Admin with options to manage inventory
     private static void showAdminMenu(Admin admin, Scanner sc) {
         int choice;
         do {
@@ -72,6 +84,7 @@ public class Main {
         sc.close();
     }
 
+    //Menu for Staff with limited options
     private static void showStaffMenu(Staff staff, Scanner sc) {
         int choice;
         do {
