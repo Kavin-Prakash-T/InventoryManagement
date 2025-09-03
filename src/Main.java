@@ -80,7 +80,7 @@ public class Main {
                 default:
                     System.out.println("Invalid choice!");
             }
-        } while (choice != 0);
+        } while (choice != 6);
         sc.close();
     }
 
@@ -108,7 +108,7 @@ public class Main {
                 default:
                     System.out.println("Invalid choice!");
             }
-        } while (choice != 0);
+        } while (choice != 3);
         sc.close();
     }
 
