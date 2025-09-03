@@ -1,10 +1,15 @@
 package model;
 
-public class Admin extends User {
+// Derived class from the base class User
+
+public class Admin extends User { 
+
+    //Calling the constructor of the immediate parent class using super keyword for code reusability
     public Admin(String username, String password) {
         super(username, password);
     }
 
+    //Implementation of the abstract methods
     public void addProduct() {
         System.out.println("Adding product...");
     }
