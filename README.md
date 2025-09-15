@@ -50,7 +50,7 @@ The system ensures **data consistency** using a **MySQL database** and demonstra
 - **Compilation and Run Command:** Execute `run.bat` in Command Prompt  
 
 ---
-## UML Diagram
+## UML Class Diagram
 ![UML Class Diagram](./diagrams/classdiagram.png)
 
 ## Use Case Diagram
