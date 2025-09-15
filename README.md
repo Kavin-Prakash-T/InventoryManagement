@@ -51,7 +51,7 @@ The system ensures **data consistency** using a **MySQL database** and demonstra
 
 ---
 ## UML Diagram
-![UML Class Diagram](./diagrams/class diagram.png)
+![UML Class Diagram](./diagrams/classdiagram.png)
 
 ## Use Case Diagram
 ![Use Case Diagram](./diagrams/usecase.png)
