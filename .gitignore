@@ -1,0 +1,27 @@
+# IntelliJ IDEA project files
+.idea/
+*.iml
+
+# Compiled output
+/out/
+
+# Log files
+*.log
+
+# Java class files
+*.class
+
+# Build packages
+*.jar
+*.war
+*.ear
+
+# Crash logs
+hs_err_pid*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local database credentials (if you create this file)
+db.properties
