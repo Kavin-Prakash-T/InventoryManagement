@@ -8,8 +8,8 @@ import model.User;
 public class Main {
     public static void main(String[] args) {
 
-        // Scanner class to get user input 
-        Scanner sc=new Scanner(System.in); 
+        // Scanner class to get user input
+        Scanner sc=new Scanner(System.in);
 
         // Welcome message and login prompt
         System.out.println("Retail Inventory Management System");
@@ -29,13 +29,13 @@ public class Main {
             
             //Runtime implementation based on user role
             user = new Admin(username, password);
-            showAdminMenu((Admin) user, sc);
+            showAdminMenu((Admin) user);
         } 
         else if (username.equals("staff") && password.equals("staff123")) {
             
             //Runtime implementation based on user role
             user = new Staff(username, password);
-            showStaffMenu((Staff) user, sc);
+            showStaffMenu((Staff) user);
         } 
         else {
             System.out.println("Invalid credentials!");
@@ -45,16 +45,18 @@ public class Main {
     }
 
     //Menu for Admin with options to manage inventory
-    private static void showAdminMenu(Admin admin, Scanner sc) {
+    private static void showAdminMenu(Admin admin) {
         int choice;
+        // Scanner class to get user input
+        Scanner sc=new Scanner(System.in);
         do {
             System.out.println("\nAdmin Menu");
-            System.out.println("1. Add Product");
-            System.out.println("2. Update Product");
-            System.out.println("3. Delete Product");
-            System.out.println("4. View All Products");
-            System.out.println("5. Generate Report");
-            System.out.println("6. Logout");
+            System.out.println("1.Add Product");
+            System.out.println("2.Update Product");
+            System.out.println("3.Delete Product");
+            System.out.println("4.View All Products");
+            System.out.println("5.Generate Report");
+            System.out.println("6.Logout");
             System.out.print("Enter your choice: ");
             choice = sc.nextInt();
 
@@ -75,7 +77,8 @@ public class Main {
                     admin.generateReport();
                     break;
                 case 6:
-                    System.out.println("Logging out...");
+                    System.out.println("Thanks for using the System.");
+                    System.out.println("Logged out Successfully.");
                     break;
                 default:
                     System.out.println("Invalid choice!");
@@ -85,13 +88,16 @@ public class Main {
     }
 
     //Menu for Staff with limited options
-    private static void showStaffMenu(Staff staff, Scanner sc) {
+    private static void showStaffMenu(Staff staff) {
+
         int choice;
+        // Scanner class to get user input
+        Scanner sc=new Scanner(System.in);
         do {
             System.out.println("\nStaff Menu");
-            System.out.println("1. View Products");
-            System.out.println("2. Generate Report");
-            System.out.println("3. Logout");
+            System.out.println("1.View Products");
+            System.out.println("2.Generate Report");
+            System.out.println("3.Logout");
             System.out.print("Enter your choice: ");
             choice = sc.nextInt();
 
@@ -103,7 +109,8 @@ public class Main {
                     staff.generateReport();
                     break;
                 case 3:
-                    System.out.println("Logging out...");
+                    System.out.println("Thanks for using the System.");
+                    System.out.println("Logged out Successfully.");
                     break;
                 default:
                     System.out.println("Invalid choice!");
