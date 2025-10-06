@@ -11,8 +11,7 @@ public class Product {
     private String category; //(ie..) "Electronics", "Groceries", "Clothing"
 
     //Parameterized constructor for initializing product attributes
-    public Product(int id, String name, int quantity, double price, String category) {
-        this.id = id;
+    public Product(String name, String category, int quantity, double price) {
         this.name = name;
         this.quantity = quantity;
         this.price = price;
@@ -20,14 +19,12 @@ public class Product {
     }
 
     // Getters for accessing product attributes
-    public int getId() { return id; }
     public String getName() { return name; }
     public int getQuantity() { return quantity; }
     public double getPrice() { return price; }
     public String getCategory() { return category; }
 
     // Setters for modifying product attributes
-    public void setId(int id) { this.id = id; }
     public void setName(String name) { this.name = name; }
     public void setQuantity(int quantity) { this.quantity = quantity; }
     public void setPrice(double price) { this.price = price; }

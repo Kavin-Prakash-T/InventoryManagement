@@ -12,7 +12,22 @@ public class Admin extends User {
     //Implementation of the abstract methods
     //Method to get the details of the product to be added
     public void addProduct() {
-        System.out.println("Adding product...");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("\nAdd New Product");
+        System.out.print("Enter product name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter category: ");
+        String category = sc.nextLine();
+
+        System.out.print("Enter quantity: ");
+        int quantity = sc.nextInt();
+
+        System.out.print("Enter price: ");
+        double price = sc.nextDouble();
+
+        Product product = new Product(name, category, quantity, price);
+        inventoryService.addProduct(product);
     }
 
     //Method to get the details of the product to be updated
