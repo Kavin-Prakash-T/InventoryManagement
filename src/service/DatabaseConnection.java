@@ -2,6 +2,7 @@ package service;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class DatabaseConnection {
     // MySql localhost URL
@@ -13,7 +14,12 @@ public class DatabaseConnection {
 
     public static Connection getConnection() {
         Connection connection = null;
-        connection = DriverManager.getConnection(URL, USER, PASSWORD);
+        try {
+            connection = DriverManager.getConnection(URL, USER, PASSWORD);
+            System.out.println("Database Connection Successful!");
+        } catch (SQLException e) {
+            System.out.println("Database Not Connected ! Sorry , Try again later !,Process terminated due to : " + e.getMessage());
+        }
         return connection;
     }
 }

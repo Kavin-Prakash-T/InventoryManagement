@@ -1,5 +1,9 @@
 package model;
 
+import service.InventoryService;
+
+import java.util.Scanner;
+
 // Derived class from the base class User - Inheritance
 
 public class Admin extends User { 
@@ -27,6 +31,7 @@ public class Admin extends User {
         double price = sc.nextDouble();
 
         Product product = new Product(name, category, quantity, price);
+        InventoryService inventoryService = new InventoryService();
         inventoryService.addProduct(product);
     }
 
