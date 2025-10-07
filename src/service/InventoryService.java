@@ -6,7 +6,22 @@ import java.util.*;
 
 public class InventoryService {
 
-    public void addProduct(Product product) {
+    public void addProduct() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("\nAdd New Product");
+        System.out.print("Enter product name: ");
+        String name = sc.nextLine();
+
+        System.out.print("Enter category: ");
+        String category = sc.nextLine();
+
+        System.out.print("Enter quantity: ");
+        int quantity = sc.nextInt();
+
+        System.out.print("Enter price: ");
+        double price = sc.nextDouble();
+        sc.close();
+        Product product = new Product(name, category, quantity, price);
         // Connecting to the database
         try (Connection conn = DatabaseConnection.getConnection()) {
             // Query to insert the product into the products table
