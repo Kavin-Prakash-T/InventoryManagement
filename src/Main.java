@@ -35,24 +35,21 @@ public class Main {
 
             //Runtime implementation based on user role
             user = new Admin(username, password);
-            showAdminMenu((Admin) user);
+            showAdminMenu((Admin) user,sc);
         } else if (username.equals("staff") && password.equals("staff123")) {
 
             //Runtime implementation based on user role
             user = new Staff(username, password);
-            showStaffMenu((Staff) user);
+            showStaffMenu((Staff) user,sc);
         } else {
             System.out.println("Invalid credentials!");
             return;
         }
-        sc.close();
     }
 
     //Menu for Admin with options to manage inventory
-    private static void showAdminMenu(Admin admin) {
+    private static void showAdminMenu(Admin admin,Scanner sc) {
         int choice;
-        // Scanner class to get user input
-        Scanner sc = new Scanner(System.in);
         do {
             System.out.println("\nAdmin Menu");
             System.out.println("1.Add Product");
@@ -66,7 +63,7 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    admin.addProduct();
+                    admin.addProduct(sc);
                     break;
                 case 2:
                     admin.updateProduct();
@@ -92,11 +89,9 @@ public class Main {
     }
 
     //Menu for Staff with limited options
-    private static void showStaffMenu(Staff staff) {
+    private static void showStaffMenu(Staff staff,Scanner sc) {
 
         int choice;
-        // Scanner class to get user input
-        Scanner sc = new Scanner(System.in);
         do {
             System.out.println("\nStaff Menu");
             System.out.println("1.View Products");
