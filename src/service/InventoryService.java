@@ -7,16 +7,20 @@ import java.util.*;
 public class InventoryService {
 
     public void addProduct(Product product) {
+        // Connecting to the database
         try (Connection conn = DatabaseConnection.getConnection()) {
+            // Query to insert the product into the products table
             String query = "INSERT INTO products (name, category, quantity, price) VALUES (?, ?, ?, ?)";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setString(1, product.getName());
             ps.setString(2, product.getCategory());
             ps.setInt(3, product.getQuantity());
             ps.setDouble(4, product.getPrice());
+            // Executing the query
             ps.executeUpdate();
             System.out.println("Product added to the inventory successfully!");
         } catch (SQLException e) {
+            // Handling SQL Exception
             System.out.println("Error in adding product: " + e.getMessage());
         }
     }

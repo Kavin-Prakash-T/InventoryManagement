@@ -14,10 +14,13 @@ public class DatabaseConnection {
 
     public static Connection getConnection() {
         Connection connection = null;
+        // SQL Exception Handling
         try {
+            // Database Connection
             connection = DriverManager.getConnection(URL, USER, PASSWORD);
             System.out.println("Database Connection Successful!");
         } catch (SQLException e) {
+            // Displaying the error message to the user
             System.out.println("Database Not Connected ! Sorry , Try again later !,Process terminated due to : " + e.getMessage());
         }
         return connection;
