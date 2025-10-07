@@ -49,6 +49,8 @@ public class Admin extends User {
     @Override
     public void viewProducts() {
         System.out.println("Viewing all products...");
+        InventoryService inventoryService = new InventoryService();
+        inventoryService.viewProducts();
     }
 
     //Method to generate a report based on the given information and category - Polymorphism

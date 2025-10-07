@@ -2,6 +2,8 @@ package model;
 
 // Derived class from the base class User - Inheritance
 
+import service.InventoryService;
+
 public class Staff extends User {
 
     //Calling the constructor of the immediate parent class using super keyword for code reusability
@@ -13,6 +15,8 @@ public class Staff extends User {
     @Override
     public void viewProducts() {
         System.out.println("Viewing all products...");
+        InventoryService inventoryService = new InventoryService();
+        inventoryService.viewProducts();
     }
 
     //Method to generate a report based on the given information and category - Polymorphism
