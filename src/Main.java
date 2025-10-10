@@ -66,7 +66,7 @@ public class Main {
                     admin.addProduct(sc);
                     break;
                 case 2:
-                    admin.updateProduct();
+                    admin.updateProduct(sc);
                     break;
                 case 3:
                     admin.deleteProduct();

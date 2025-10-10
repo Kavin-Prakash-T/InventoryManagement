@@ -36,8 +36,9 @@ public class Admin extends User {
     }
 
     //Method to get the details of the product to be updated
-    public void updateProduct() {
-        System.out.println("Updating product...");
+    public void updateProduct(Scanner sc) {
+        InventoryService inventoryService = new InventoryService();
+        inventoryService.updateProduct(sc);
     }
 
     //Method to get the details of the product to be removed from the inventory
